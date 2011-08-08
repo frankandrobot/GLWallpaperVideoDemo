@@ -72,8 +72,8 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
 	Log.d(TAG,"Killing texture");
 	NativeCalls.closeOpenGL();
 	setTextureDimensions( screenWidth, screenHeight );
-	setFitToScreenDimensions( GLWallpaperVideoDemo.videoWidth, 
-				  GLWallpaperVideoDemo.videoHeight );
+	setFitToScreenDimensions( mParent.videoWidth, 
+				  mParent.videoHeight );
 	if ( !runOnce ) {
 	    Log.d(TAG,"Preparing frame");
 	    NativeCalls.prepareStorageFrame();
