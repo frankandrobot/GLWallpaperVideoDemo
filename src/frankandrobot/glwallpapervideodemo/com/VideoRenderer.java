@@ -56,7 +56,7 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
     }
 
     public VideoRenderer(GLWallpaperVideoDemo p, 
-			   GLWallpaperVideoDemo.CubeEngine e) {
+			   GLWallpaperVideoDemo.VideoEngine e) {
 	super();
 	mParent = p;
 	mParentEngine = e;
