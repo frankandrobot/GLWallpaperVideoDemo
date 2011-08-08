@@ -71,8 +71,9 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
 	setScreenDimensions( width, height );
 	Log.d(TAG,"Killing texture");
 	NativeCalls.closeOpenGL();
-	setTextureDimensions();
-	setFitToScreenDimensions( videoWidth, videoHeight );
+	setTextureDimensions( screenWidth, screenHeight );
+	setFitToScreenDimensions( GLWallpaperVideoDemo.videoWidth, 
+				  GLWallpaperVideoDemo.videoHeight );
 	if ( !runOnce ) {
 	    Log.d(TAG,"Preparing frame");
 	    NativeCalls.prepareStorageFrame();
@@ -129,8 +130,8 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
     //set texture dimensions 
     //set nearest power of 2 dimensions for
     //texture based on either screen dimensions OR video
-    public void setTextureDimensions() {
-	int s = Math.max( screenWidth, screenHeight );
+    public void setTextureDimensions(int wh, int h) {
+	int s = Math.max( w, h );
 	powWidth = getNextHighestPO2( s ) / 2;
 	powHeight = getNextHighestPO2( s ) / 2;
 	NativeCalls.setTextureDimensions( powWidth,
