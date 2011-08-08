@@ -129,7 +129,7 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
     //set texture dimensions 
     //set nearest power of 2 dimensions for
     //texture based on either screen dimensions OR video
-    public void setTextureDimensions(boolean span) {
+    public void setTextureDimensions() {
 	int s = Math.max( screenWidth, screenHeight );
 	powWidth = getNextHighestPO2( s ) / 2;
 	powHeight = getNextHighestPO2( s ) / 2;
