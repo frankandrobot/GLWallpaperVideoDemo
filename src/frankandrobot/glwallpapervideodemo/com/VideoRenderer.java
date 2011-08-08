@@ -49,6 +49,8 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
     GLWallpaperVideoDemo.VideoEngine mParentEngine;
     //lock
     static public Object lock = new Object();
+    //fps
+    long fpsTime;
 
     public VideoRenderer() { 
 	super();
@@ -130,7 +132,7 @@ public class VideoRenderer implements GLWallpaperService.Renderer {
     //set texture dimensions 
     //set nearest power of 2 dimensions for
     //texture based on either screen dimensions OR video
-    public void setTextureDimensions(int wh, int h) {
+    public void setTextureDimensions(int w, int h) {
 	int s = Math.max( w, h );
 	powWidth = getNextHighestPO2( s ) / 2;
 	powHeight = getNextHighestPO2( s ) / 2;
